@@ -29,3 +29,9 @@ node index.js tattoo during ... adjust 0
 node index.js tattoo during ... adjust -1 EQBd-6iUaNY5VnHHYap5lZnzmpzG-UWwBafvIqQ7LQYc9eso
 node index.js tattoo during ... adjust 0 EQBd-6iUaNY5VnHHYap5lZnzmpzG-UWwBafvIqQ7LQYc9eso
 ```
+
+To print to screen rather than saving to files, use `-v` flag:
+
+```
+node index.js -v tattoo during ...
+```
