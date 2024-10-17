@@ -18,20 +18,36 @@ npm install
 
 # Usage
 
-`node index.js word1 word2 ... word24 [workchain] [address]`
-
-example:
-
 ```
-node index.js tattoo during ... adjust
-node index.js tattoo during ... adjust -1
-node index.js tattoo during ... adjust 0
-node index.js tattoo during ... adjust -1 EQBd-6iUaNY5VnHHYap5lZnzmpzG-UWwBafvIqQ7LQYc9eso
-node index.js tattoo during ... adjust 0 EQBd-6iUaNY5VnHHYap5lZnzmpzG-UWwBafvIqQ7LQYc9eso
+$ node index.js -h
+
+Usage: node index.js [OPTIONS]
+
+Options:
+  -h              Display this help message
+  -m "WORDS"      Provide a 24-word mnemonic phrase (in quotes)
+  -w VALUE        Set the workchain value (0 or -1, default is -1)
+  -a ADDRESS      Specify an address
+
+If -m is not provided, a new mnemonic will be generated automatically.
+
+Examples:
+  node index.js -h
+  node index.js -m "word1 word2 ... word24" -w 0 -a "some_address_here"
+  node index.js -w 0
+  node index.js
 ```
 
-To print to screen rather than saving to files, use `-v` flag:
+The address can be in one of these forms:
+- bouncable
 
-```
-node index.js -v tattoo during ...
-```
+  e.g. `Ef91wPRo1YEwUwz5SA9MdV-RvSDK_qcXYMQI366mrmPPtRlJ`
+
+- unbouncable
+
+  e.g. `Uf91wPRo1YEwUwz5SA9MdV-RvSDK_qcXYMQI366mrmPPtUSM`
+
+- raw, i.e. `1byte tag + 1byte workchain + 32 bytes hash + 2 byte crc`
+
+  e.g. `-1:75c0f468d58130530cf9480f4c755f91bd20cafea71760c408dfaea6ae63cfb5`
+
