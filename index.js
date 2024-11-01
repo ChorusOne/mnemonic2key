@@ -4,7 +4,7 @@ const fs = require("fs");
 const ton = require('@ton/ton');
 const { mnemonicNew } = require('@ton/crypto');
 
-const { WalletContractV4, WalletContractV3R2 } = ton;
+const { WalletContractV5R1, WalletContractV4, WalletContractV3R2 } = ton;
 
 // Function to display help message
 const displayHelp = () => {
@@ -142,7 +142,7 @@ Workchain Value: ${workchainValue}
     fs.writeFileSync('wallet.pk', seed);
     fs.writeFileSync('wallet.pk.b64', Buffer.from(seed).toString('base64'));
 
-    for (const ContractType of [WalletContractV3R2, WalletContractV4]) {
+    for (const ContractType of [WalletContractV3R2, WalletContractV4, WalletContractV5R1]) {
         await createAndOutputWallet(ContractType, keyPair, workchainValue, addressString);
     }
 };
