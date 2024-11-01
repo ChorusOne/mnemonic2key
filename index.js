@@ -95,10 +95,9 @@ Bounceable address: ${friendlyAddress}
 Non-bounceable address: ${friendlyAddressNonBounceable}
 Raw address: ${rawAddress}
 Hash address: ${hashAddress}
-Wallet ID: ${contract.walletId}
 Workchain: ${contract.workchain}
-AddressString: ${addressString}
-    `);
+AddressString: ${addressString}`);
+    console.log('Wallet ID:', contract.walletId);
 
     const tonWebAddress = new TonWeb.utils.Address(addressString);
     const addressBytes = new Uint8Array(36);
